@@ -1,0 +1,20 @@
+version: '3'
+services: 
+    api:
+        build:
+            context: ./catan-api
+            dockerfile: Dockerfile
+        ports:
+            - 8080:80
+        environment: 
+            ASPNETCORE_ENVIRONMENT: "Development"
+    frontend:
+        build: 
+            context: ./catan-frontend
+            dockerfile: Dockerfile
+        ports:
+            - 3000:3000
+        environment:
+            NODE_ENV: "production"
+            API_HOST: "http://localhost:8080"
+        tty: true

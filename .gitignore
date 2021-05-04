@@ -1,0 +1,19 @@
+############
+# common
+
+############
+# API
+
+[Bb]in/
+[Oo]bj/
+
+.vs
+
+*.DotSettings
+
+############
+# frontend
+
+.next
+
+node_modules
