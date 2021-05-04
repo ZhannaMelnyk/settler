@@ -20,7 +20,7 @@ namespace Catan.API
 		{
 			services.AddControllers();
 
-      services.AddCors();
+			services.AddCors();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,8 +30,8 @@ namespace Catan.API
 			{
 				app.UseDeveloperExceptionPage();
 			}
-			
-			app.UseHttpsRedirection();
+
+			app.UseCors(builder => builder.AllowAnyOrigin());
 
 			app.UseRouting();
 
@@ -41,8 +41,6 @@ namespace Catan.API
 			{
 				endpoints.MapControllers();
 			});
-
-      app.UseCors(builder => builder.AllowAnyOrigin());
 		}
 	}
 }
